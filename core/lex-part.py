@@ -15,8 +15,6 @@ tokens = (
 # Regular expression rules for tokens
 t_TOKEN_ID = r'_([A-Za-z0-9]_)*([A-Za-z0-9]{2})*|[A-Za-z]([A-Za-z0-9]{2})*((_[A-Za-z0-9])*|([A-Za-z0-9]_)*)([A-Za-z0-9]{2})*'
 
-#TODO: Comment token regex rule comes here!
-
 # Regular expression rules for trivial tokens
 t_TOKEN_CLASS = r'class'
 t_TOKEN_REFERENCE = r'reference'
@@ -57,6 +55,9 @@ def t_TOKEN_INTEGER(t):
         string_value = string_value[1:]
     t.value = sign * int(string_value, 0)
     return t
+#TODO: Comment token regex rule function comes here!
+# NOTE that it mustn't have any return statement in it.
+
 # TODO: Real_number,String functions definitions come here
 # Note that real number function must parse it's raw value (like '12.65') to it's actual value(a real number) (ex: real number token string value = '12.42' and t.value must be set to 12.42)
 # Note that string function must parse it's raw value to get its actual value and put it at t.value.
